@@ -11,10 +11,10 @@ my $converter = Text::Iconv->new("utf-8", "windows-1251");
 our $VERSION = '0.1';
 
 post '/convert' => sub {
+    	content_type 'application/json';
+	
 	my $spreadsheet = request->upload('spreadsheet');
 	my $excelParser = Spreadsheet::XLSX->new($spreadsheet->file_handle, $converter);
-    	content_type 'application/jsron';
-	$DB::single=1;
 	my @worksheets = map($_->{Cells},@{$excelParser->{Worksheet}});
 	foreach my $worksheet (@worksheets) {
 		foreach my $row  (@$worksheet) {
@@ -26,6 +26,7 @@ post '/convert' => sub {
 
 get '/version' => sub {
 	content_type 'application/json';
+	
 	return to_json { version => $VERSION };
 };
 
