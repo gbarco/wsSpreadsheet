@@ -111,35 +111,22 @@
 
           <ol>          
             <li>
-              <h2>Tune your application</h2>
-
+              <h2>Test POST endpoint at /convert</h2>
               <p>
-              Your application is configured via a global configuration file,
-              <tt>config.yml</tt> and an "environment" configuration file,
-              <tt>environments/development.yml</tt>. Edit those files if you
-              want to change the settings of your application.
+              Your application should include code similar to
+<script src="https://gist.github.com/gbarco/abe80bd62971115c13e6f61965db5335.js"></script>
               </p>
-            </li>
 
-            <li>
-              <h2>Add your own routes</h2>
+<form method="POST" action="/convert" enctype="multipart/form-data">
+<p> Please select a file to upload:<br/>
+<input type="file" name="spreadsheet">
+<input type="submit">
+</p>         
 
-              <p>
-              The default route that displays this page can be removed,
-              it's just here to help you get started. The template used to
-              generate this content is located in 
-              <code>views/index.tt</code>.
-              You can add some routes to <tt>lib/wsSpeadsheet.pm</tt>. 
-              </p>
             </li>
 
             <li>
                 <h2>Enjoy web development again</h2>
-
-                <p>
-                Once you've made your changes, restart your standalone server
-                (bin/app.pl) and you're ready to test your web application.
-                </p>
             </li>
 
           </ol>
