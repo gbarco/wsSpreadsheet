@@ -29,3 +29,6 @@ template: "simple"
 # For session support enable the following line and see Dancer::Session
 # session: "YAML"
 
+engines:
+        JSON:
+            pretty: '0'
