@@ -5,10 +5,10 @@ MAINTAINER  Gonzalo Barco gonzalo.barco@globant.com
 RUN curl -L http://cpanmin.us | perl - App::cpanminus
 RUN cpanm Carton Starman
 
-RUN cachebuster=b953b35 git clone https://github.com/gbarco/wsSpreadsheet.git
+RUN cachebuster=a953b35 git clone https://github.com/gbarco/wsSpreadsheet.git
 RUN cd wsSpreadsheet && carton install --deployment
 
 EXPOSE 8080
 
 WORKDIR wsSpreadsheet
-CMD carton exec starman --port 8080 bin/wsSpreadsheet.pl
+CMD carton exec starman --port 8080 wsSpeadsheet/bin/wsSpreadsheet.pl
